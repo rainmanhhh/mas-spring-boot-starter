@@ -2,7 +2,6 @@ package ez.mas
 
 import com.fasterxml.jackson.core.JsonProcessingException
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.springframework.http.ResponseEntity
 import org.springframework.util.DigestUtils
 import java.io.UnsupportedEncodingException
 import java.nio.charset.StandardCharsets
@@ -44,7 +43,7 @@ class Mas(
   }
 
   private fun buildBase64(mobiles: Iterable<String>, content: String): String {
-    val mobileStr = mobiles.joinToString()
+    val mobileStr = mobiles.joinToString(",")
     return buildBase64(mobileStr, content)
   }
 
